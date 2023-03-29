@@ -1,18 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic survival rate</title>
+</head>
+
 <html>
+    <h1> Titanic Survial rate</h1>
     <body>
         <form action="/predict" method="POST">
-            age: <input type="text" name="age"><br>
-            class: <select name="class">
+            <p> age: <input type="text" name="age"> </p>
+            <p>class: <select name="class">
                 <option value="first">first class</option>
                 <option value="second">second class</option>
                 <option value="third">third class</option>
-            </select><br>
-            gender: <select name="gender">
+            </select></p>
+            <p>gender: <select name="gender">
                 <option value="man">man</option>
                 <option value="woman">woman</option>
             </select><br>
-            Possibility: {{result}}<br>
-            <input type="submit" value="predict">
+            Possibility: {{result}}</p>
+            <div>
+                <input type="submit" value="predict">
+            </div>
+            
         </form>
     </body>
 </html>
