@@ -17,16 +17,15 @@ def get_items():
         'data': request.get_data(as_text=True)
     }
 
+
 @app.route('/predict', methods=['GET'])
 def predict():
-    result = model.predict([[22,0,0,1,1,0]])[0]
+    result = model.predict([[22, 0, 0, 1, 1, 0]])[0]
     if result == 0:
 
         return jsonify({'result': 'successful'})
-    
     else:
         return jsonify({'result': 'failure'})
-
 
 
 # define a route for adding a new item to the list
