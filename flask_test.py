@@ -1,39 +1,56 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
+import Gender
+import ClassLevel
+
 
 app = Flask(__name__)
 model = pickle.load(open('decisionTree.sav', 'rb'))
 
-# create an empty list to store items
-items = []
 
-
-# define a route for getting all items in the list
-@app.route('/items', methods=['GET'])
-def get_items():
-    return {
-        'method': request.method,
-        'headers': dict(request.headers),
-        'data': request.get_data(as_text=True)
-    }
-
-
-@app.route('/predict', methods=['GET'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    result = model.predict([[22, 0, 0, 1, 1, 0]])[0]
-    if result == 0:
 
-        return jsonify({'result': 'successful'})
-    else:
-        return jsonify({'result': 'failure'})
+    inputItems = []
+    # data = dict(request.headers)
+    # inputItems.append(float(data['Age']))
+    # classNo = data['Class']
+    # gender = data['Gender']
+    age = float(request.form['age'])
+    inputItems.append(age)
+    classNo = request.form['class']
+    classNoItem = ClassLevel.convertClass(classNo)
+    gender = request.form['gender']
+
+    # if classNo == "first":
+    #     classNoItem = [1, 0, 0]
+    # elif classNo == "second":
+    #     classNoItem = [0, 1, 0]
+    # else:
+    #     classNoItem = [0, 0, 1]
+    inputItems = inputItems + classNoItem
+    genderItem = Gender.convertGender(gender)
+
+    # if gender == 'man':
+    #     genderItem = [1, 0]
+    # else:
+    #     genderItem = [0, 1]
+    inputItems = inputItems + genderItem
+
+    print(inputItems)
+
+    element = [inputItems]
+
+    result = model.predict(element)[0]
+    print(result)
+    return render_template("index.html", **locals())
 
 
 # define a route for adding a new item to the list
-@app.route('/items', methods=['POST'])
-def add_item():
-    item = request.json['item']
-    items.append(item)
-    return jsonify({'message': 'Item added successfully'})
+@app.route('/',  methods=['GET', 'POST'])
+def indexPage():
+    result = ''
+    return render_template('index.html', **locals())
 
 
 if __name__ == '__main__':

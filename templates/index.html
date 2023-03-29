@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form action="/predict" method="POST">
+            age: <input type="text" name="age"><br>
+            class: <select name="class">
+                <option value="first">first class</option>
+                <option value="second">second class</option>
+                <option value="third">third class</option>
+            </select><br>
+            gender: <select name="gender">
+                <option value="man">man</option>
+                <option value="woman">woman</option>
+            </select><br>
+            Possibility: {{result}}<br>
+            <input type="submit" value="predict">
+        </form>
+    </body>
+</html>
