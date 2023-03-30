@@ -26,15 +26,19 @@
 
 ![image1](https://github.com/niuniu268/machineLearning/blob/master/imgs/image1.png)
 
-2. Optimization 
+2. Optimization (Please read through the file, titanic.ipnb)
 
  - Bootstrap aggregation (Begging)
  - Random forest
- - Count vectorizer
+ - Cross validation
 
 3. REST Api
-
+ - visit ``` 127.0.0.1:5000```
+ 
 ![web1](https://github.com/niuniu268/machineLearning/blob/master/imgs/Screenshot1.png)
+
+ - input age, gender and class and then gain the result
+
 ![web2](https://github.com/niuniu268/machineLearning/blob/master/imgs/Screenshot2.png)
 
 ## Reference
