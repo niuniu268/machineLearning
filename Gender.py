@@ -3,9 +3,9 @@ genderItem = []
 
 def convertGender(gender):        
     if gender == 'man':
-        genderItem = [1, 0]
-    else:
         genderItem = [0, 1]
+    else:
+        genderItem = [1, 0]
     return genderItem
 
 

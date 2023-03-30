@@ -5,12 +5,11 @@ import ClassLevel
 
 
 app = Flask(__name__)
-model = pickle.load(open('decisionTree.sav', 'rb'))
+model = pickle.load(open('randomforest.sav', 'rb'))
 
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-
     inputItems = []
     # data = dict(request.headers)
     # inputItems.append(float(data['Age']))
@@ -41,7 +40,12 @@ def predict():
 
     element = [inputItems]
 
-    result = model.predict(element)[0]
+    possibility = model.predict(element)[0]
+
+    if possibility == 1:
+        result = "survival"
+    else:
+        result = "unsurvival"
     print(result)
     return render_template("index.html", **locals())
 
