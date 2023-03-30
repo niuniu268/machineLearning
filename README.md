@@ -6,6 +6,8 @@
 - Optimeralösningen
 - LevereralösningenviaettRESTAPI
 
+## Solution
+
 1. Machine Learning aims to address Titanic machine learning problem
  - In order to deal with the machine leanring problem, I grasped the database from Vanderbilt University
 
@@ -26,7 +28,15 @@
 
 2. Optimization 
 
+ - Bootstrap aggregation (Begging)
+ - Random forest
+ - Count vectorizer
+
 3. REST Api
 
 ![web1](https://github.com/niuniu268/machineLearning/blob/master/imgs/Screenshot1.png)
 ![web2](https://github.com/niuniu268/machineLearning/blob/master/imgs/Screenshot2.png)
+
+## Reference
+
+    Provost, F., & Fawcett, T. (2013). Data Science for Business: What you need to know about data mining and data-analytic thinking. Köln, CA: O`Reilly.
