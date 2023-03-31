@@ -13,12 +13,9 @@
 
 ``` https://biostat.app.vumc.org/wiki/pub/Main/DataSets/titanic.txt ```
 
- - For the sake of the higher accuracy rate, the omitted data is replaced by the mean. The specific procedures are listed in the Jupyter notebook
-
- - The approach to address this problem is a decision tree. In comparison with information entropy, I applied Gini Index when I took the advantage of Gini Index into account.
-
-    According to Provost and Fawcett (2013), the Gini score is not varied in response to the arbitrary class which people take. The sum of the probabilities of all arbitrary classes is always equal to zero. Therefore a Gini score of zero is the purest score possible
-
+ - In order to increase the accuracy rate, any missing data has been replaced with the mean value. The specific steps taken to achieve this are outlined in the Jupyter notebook.
+ - To address this problem, a decision tree was used. Instead of using information entropy, Gini Index was applied as it provided an advantage in this particular situation.
+    Provost and Fawcett (2013) state that the Gini score remains unchanged regardless of the class chosen by people. The sum of probabilities for all classes is always equal to zero, making a Gini score of zero the purest possible score.
  ![GiniImage](https://github.com/niuniu268/machineLearning/blob/master/imgs/Gini.png)
 
 - Created a decision tree through the website: 
